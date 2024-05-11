@@ -32,7 +32,7 @@ function App() {
 
           {/* AdminPanel Paths */}
           <Route path="/adminpanel" element={<AdminPanel />}>
-            <Route path="user-manager" element={<UserManager />} />
+            <Route path="" element={<UserManager />} />
             <Route path="post-manager" element={<PostManager />} />
           </Route>
         </Routes>

@@ -21,6 +21,7 @@ function PostBlog() {
             // Make sure token is present
             if (!token) {
                 alert("User not authenticated. Please login.");
+                history("/");
                 return;
             }
 
