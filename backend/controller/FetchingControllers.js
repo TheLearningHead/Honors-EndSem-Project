@@ -86,7 +86,6 @@ const fetchAllPostsOfUser = async (req, res) => {
     // Assuming req.username is set by your middleware
     const username = req.username;
 
-    // Find the user based on the username
     const user = await User.findOne({ username });
 
     if (!user) {

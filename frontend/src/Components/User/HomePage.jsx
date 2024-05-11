@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 function HomePage() {
     const [blogList, setBlogList] = useState([]);
@@ -19,13 +18,13 @@ function HomePage() {
     const OnePost = () => {
         return blogList.map((blog, index) => {
             return (
-                <Link className="card" key={index}>
+                <div className="card" key={index}>
                     <div className="body">
                         <h1>{blog.title}</h1>
                         <p className="text">{blog.content}</p>
                         <span class="username">from: @{blog.uploader.username}</span>
                     </div>
-                </Link>
+                </div>
             );
         });
     };
@@ -35,7 +34,6 @@ function HomePage() {
     }
     return (
         <>
-            <nav>Bloggify</nav>
             <div id="HomePage">{OnePost()}</div>;
         </>
     );
