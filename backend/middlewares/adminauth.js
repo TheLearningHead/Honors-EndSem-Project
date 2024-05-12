@@ -16,17 +16,17 @@ const adminAuth = async (req, res, next) => {
 
   try {
     // Verify the token
-    const decoded = jwt.verify(token, "your_secret_key");
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     // Check if the username exists in the database
-    const admin = await Admin.findOne({ username: decoded.username });
+    const admin = await Admin.findOne({ _id: decoded.adminId });
 
     if (!admin) {
       return res.status(401).json({ error: "Admin not found" });
     }
 
     // Set req.username with the decoded username
-    req.username = decoded.username;
+    req.username = admin.username;
 
     // Call next middleware
     next();

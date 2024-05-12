@@ -97,7 +97,7 @@ const adminLogin = async (req, res) => {
     }
 
     // Generate JWT token
-    const token = jwt.sign({ adminId: admin._id }, "your_secret_key_here", {
+    const token = jwt.sign({ adminId: admin._id }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
 

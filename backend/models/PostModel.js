@@ -11,19 +11,9 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-//   uploaddate
-
   content: {
     type: String,
     required: true,
-  },
-  isUploaded: {
-    type: Boolean,
-    default: false,
-  },
-  isDraft: {
-    type: Boolean,
-    default: true,
   },
 });
 

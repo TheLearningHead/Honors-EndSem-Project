@@ -18,7 +18,7 @@ function AdminPanel() {
                 {token ? (
                     <Link onClick={handleLogout}>Logout</Link>
                 ) : (
-                    <Link to={"/user/login"}>Login</Link>
+                    <Link to={"/admin/login"}>Login</Link>
                 )}
             </nav>
 

@@ -3,30 +3,19 @@ const router = express.Router();
 const { userLogin, userSignIn } = require("../controller/AuthControllers");
 const {
   fetchAllUsers,
-
-  fetchOneUser,
+  userdata,
 } = require("../controller/FetchingControllers");
-const { addUser } = require("../controller/AddControllers");
+const { deleteUser } = require("../controller/DeleteControllers");
 const { userAuth } = require("../middlewares/userauth");
 
 const { adminAuth } = require("../middlewares/adminauth");
-
-const {
-  updateAbout,
-  updateName,
-  updatePassword,
-} = require("../controller/UpdateController");
 
 router.post("/user/signin", userSignIn);
 router.post("/user/login", userLogin);
 
 router.get("/getAllUsers", adminAuth, fetchAllUsers);
-router.get("/getOneUsers", adminAuth, fetchOneUser);
 
-router.post("/addUser", adminAuth, addUser);
-
-router.put("/user/updateName", userAuth, updateName);
-router.put("/user/updateAbout", userAuth, updateAbout);
-router.put("/user/updatePassword", userAuth, updatePassword);
+router.get("/fetchuser", userAuth, userdata);
+router.delete("/deleteUser/:id", adminAuth, deleteUser);
 
 module.exports = router;

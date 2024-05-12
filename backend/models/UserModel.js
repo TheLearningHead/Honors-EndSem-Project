@@ -19,14 +19,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     
   },
-
   uploadedPosts: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Post",
-    },
-  ],
-  draftPosts: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Post",
