@@ -9,7 +9,7 @@ const { userAuth } = require("../middlewares/userauth");
 const { adminAuth } = require("../middlewares/adminauth");
 
 const { addPost } = require("../controller/AddControllers");
-const { deletePost } = require("../controllers/DeleteControllers");
+const { deletePost} = require("../controller/DeleteControllers")
 
 router.get("/getAllPosts", fetchAllPosts);
 router.get("/user/getAllPosts", userAuth, fetchAllPostsOfUser);
